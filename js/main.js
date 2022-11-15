@@ -1,12 +1,6 @@
 //dichiaro le variabili
 const objectEl = document.querySelector(".object")
-const name1El = document.querySelector(".name1");
-const name2El = document.querySelector(".name2");
-const name3El = document.querySelector(".name3");
-const name4El = document.querySelector(".name4");
-const name5El = document.querySelector(".name5");
-const name6El = document.querySelector(".name6");
-
+const schedeEl = document.querySelector(".schede");
 
 
 // creo un array di oggetti
@@ -49,33 +43,51 @@ const listaTeam = [
         foto:"barbara-ramos-graphic-designer.jpg"
     },
 ];
-    // stampo l'array in console
-    console.log(listaTeam);
-    console.log(listaTeam[0].nome);
-    console.log(listaTeam[1]);
-    console.log(listaTeam[2]);
-    console.log(listaTeam[3]);
-    console.log(listaTeam[4]);
-    console.log(listaTeam[5]);
+     //stampo l'array in console
+     console.log(listaTeam);
+     console.log(listaTeam[0]);
+     console.log(listaTeam[1]);
+     console.log(listaTeam[2]);
+     console.log(listaTeam[3]);
+     console.log(listaTeam[4]);
+     console.log(listaTeam[5]);
 
-    for( let key in listaTeam){
-        console.log(listaTeam[key]);
-    }
+     for( let key in listaTeam){
+         console.log(listaTeam[key]);
+     }
     
-
-    //stampo le info degli utenti in html
-    name1El.innerHTML = listaTeam[0].nome
-    name2El.innerHTML = listaTeam[1].nome
-    name3El.innerHTML = listaTeam[2].nome
-    name4El.innerHTML = listaTeam[3].nome
-    name5El.innerHTML = listaTeam[4].nome
-    name6El.innerHTML = listaTeam[5].nome
-
-
+     //alternativa
+    // console.log(listaTeam[0].nome);
+    // console.log(listaTeam[0].ruolo);
+    // console.log(listaTeam[0].foto);
 
 
     
+     //vado a creare una funzione dove farccio un ciclo for in cui
+     //per ogni oggetto dell'array vado a: creare(createElement) un elemento html(div),
+     //aggiungo una classe per organizzare le info in delle cards
+     //metto/appendo questo elemento html creato nel contenitore dichiarato inizialmente
+    stampaInfoTeam();
 
+    function stampaInfoTeam() {
+        for (i = 0 ; i < listaTeam.length; i++){
+            const divEl = document.createElement("div");
+            divEl.classList.add("card");
+            schedeEl.append(divEl);
 
+            const h4El = document.createElement("h4");
+            h4El.innerHTML = listaTeam[ i ].nome;
+            schedeEl.append(h4El);
+
+            
+            const h5El = document.createElement("h5")
+            h5El.innerHTML = listaTeam [ i ].ruolo;
+            schedeEl.append(h5El);
+
+            const h6El = document.createElement("h6");
+            h6El.innerHTML = listaTeam[ i ].foto;
+            schedeEl.append(h6El);
+     }   
+ }
 
  

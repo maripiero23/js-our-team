@@ -62,7 +62,7 @@ const listaTeam = [
     // console.log(listaTeam[0].foto);
 
 
-    
+
      //vado a creare una funzione dove farccio un ciclo for in cui
      //per ogni oggetto dell'array vado a: creare(createElement) un elemento html(div),
      //aggiungo una classe per organizzare le info in delle cards
@@ -87,6 +87,16 @@ const listaTeam = [
             const h6El = document.createElement("h6");
             h6El.innerHTML = listaTeam[ i ].foto;
             schedeEl.append(h6El);
+
+            const createImg = document.createElement("img");
+            createImg.src = listaTeam[i].foto;
+
+            schedeEl.append(createImg);
+
+
+
+
+
      }   
  }
 

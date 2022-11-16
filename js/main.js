@@ -89,7 +89,7 @@ const listaTeam = [
             schedeEl.append(h6El);
 
             const createImg = document.createElement("img");
-            createImg.src = listaTeam[i].foto;
+            createImg.src = './img/' + listaTeam[i].foto;
 
             schedeEl.append(createImg);
 
